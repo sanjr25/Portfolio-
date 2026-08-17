@@ -69,7 +69,16 @@ export const ProtoSemModal: React.FC<ProtoSemModalProps> = ({ week, onClose }) =
                   Work Log & Notes
                 </h4>
                 <div className="p-5 rounded-xl bg-white/[0.03] border border-white/5 font-sans text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">
-                  {week.content}
+                  {week.content.split(/(\*\*.*?\*\*)/g).map((part, i) => {
+                    if (part.startsWith('**') && part.endsWith('**')) {
+                      return (
+                        <strong key={i} className="font-semibold text-amber-300">
+                          {part.slice(2, -2)}
+                        </strong>
+                      );
+                    }
+                    return part;
+                  })}
                 </div>
               </div>
 
