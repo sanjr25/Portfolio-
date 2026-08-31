@@ -3,6 +3,7 @@ import { week1Data } from './weeks/week1';
 import { week2Data } from './weeks/week2';
 import { week3Data } from './weeks/week3';
 import { week4Data } from './weeks/week4';
+import { week5Data } from './weeks/week5';
 
 export type { WeekData, WeekPhoto } from './weeks/week0';
 
@@ -12,8 +13,9 @@ export const PROTOSEM_WEEKS: WeekData[] = [
   week2Data,
   week3Data,
   week4Data,
-  ...Array.from({ length: 15 }, (_, i) => {
-    const weekNum = i + 5;
+  week5Data,
+  ...Array.from({ length: 14 }, (_, i) => {
+    const weekNum = i + 6;
     return {
       weekNum,
       title: `Week ${weekNum}`,
