@@ -108,11 +108,9 @@ void loop() {
     },
     reflection:
       'Engineered memory-efficient HTTP socket handling on hardware constrained by 520 KB SRAM. This foundation highlighted how embedded network stacks execute request routing without heavy framework abstractions.',
-    photos: [
-      { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
-    ],
+    photos: [],
     videos: [
-      { url: '/videos/task1_esp32_webserver.mp4', title: 'ESP32 Local Web Server Control & Physical Circuit Demonstration' }
+      { url: '/videos/task1_esp32_webserver.mp4', title: 'ESP32 Local HTTP Web Server Control — Phone On/Off Video' }
     ]
   },
   {
@@ -187,7 +185,7 @@ void loop() {
       { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
     ],
     videos: [
-      { url: '/videos/task2_adafruit_mqtt.mp4', title: 'Adafruit IO MQTT Cloud Telemetry & Bulb Switch Demonstration' }
+      { url: '/videos/task2_adafruit_mqtt.mp4', title: 'Adafruit IO MQTT Control — Bulb On/Off Video' }
     ]
   },
   {
@@ -221,11 +219,9 @@ void loop() {
     },
     reflection:
       'Demonstrated how serverless webhooks bridge physical embedded systems with software ecosystem automation, expanding device capabilities without adding code complexity on the micro-controller.',
-    photos: [
-      { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
-    ],
+    photos: [],
     videos: [
-      { url: '/videos/task3_ifttt_automation.mp4', title: 'IFTTT Event Automation & Webhook Execution Video' }
+      { url: '/videos/task3_ifttt_automation.mp4', title: 'IFTTT Webhooks & Voice Assistant Access Bulb Control Video' }
     ]
   },
   {
