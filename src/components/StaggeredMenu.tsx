@@ -19,6 +19,7 @@ const DEFAULT_ITEMS: MenuItem[] = [
   { id: 'home', label: 'Home', href: '#home' },
   { id: 'about', label: 'About', href: '#about' },
   { id: 'work', label: 'Work', href: '#work' },
+  { id: 'iot', label: 'IoT & Smart Home', href: '#iot' },
   { id: 'protossem', label: 'ProtoSem', href: '#protossem' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];

@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import WorkSection from './components/WorkSection';
+import IOTSection from './components/IOTSection';
 import ProtoSemSection from './components/ProtoSemSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -42,7 +43,7 @@ export function App() {
   useEffect(() => {
     if (isLoading || activePage !== 'home') return;
 
-    const sections = ['home', 'about', 'work'];
+    const sections = ['home', 'about', 'work', 'iot'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 250;
@@ -110,6 +111,8 @@ export function App() {
                 <AboutSection />
 
                 <WorkSection />
+
+                <IOTSection />
               </div>
             )}
 
