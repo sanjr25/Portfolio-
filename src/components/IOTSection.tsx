@@ -345,7 +345,10 @@ void loop() {
     },
     reflection:
       'Completing the end-to-end IoT lifecycle — from microcontroller pin logic to cloud storage and downloadable data analytics — provided a comprehensive understanding of production-grade IoT architecture.',
-    photos: [],
+    photos: [
+      { url: '/images/iot/task5_serial_monitor_log.jpg', caption: 'ESP32 Serial Terminal — Real-Time Telemetry & Timestamped Output Logs' },
+      { url: '/images/iot/task5_circuit_breadboard.jpg', caption: 'Physical ESP32 Circuit Setup & Multi-Sensor Hardware Breadboard Interfacing' }
+    ],
     videos: []
   }
 ];
