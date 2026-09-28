@@ -109,11 +109,10 @@ void loop() {
     reflection:
       'Engineered memory-efficient HTTP socket handling on hardware constrained by 520 KB SRAM. This foundation highlighted how embedded network stacks execute request routing without heavy framework abstractions.',
     photos: [
-      { url: '', caption: 'Placeholder: Hardware test setup & ESP32 local Wi-Fi IP address serial terminal output' },
-      { url: '', caption: 'Placeholder: Local browser interface showing direct GPIO state toggle buttons' }
+      { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
     ],
     videos: [
-      { url: '', title: 'Placeholder: Video demonstration of real-time local web server LED actuation' }
+      { url: '/videos/task1_esp32_webserver.mp4', title: 'ESP32 Local Web Server Control & Physical Circuit Demonstration' }
     ]
   },
   {
@@ -185,11 +184,10 @@ void loop() {
     reflection:
       'Gained mastery over MQTT pub/sub mechanics, understanding how event-driven broker payloads reduce transmission overhead by over 90% compared to traditional HTTP polling.',
     photos: [
-      { url: '', caption: 'Placeholder: Adafruit IO dashboard setup displaying live relay feeds and toggles' },
-      { url: '', caption: 'Placeholder: ESP32 hardware wiring with optocoupler relay module and status LEDs' }
+      { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
     ],
     videos: [
-      { url: '', title: 'Placeholder: Video showing remote cloud activation of relay load via Adafruit IO dashboard' }
+      { url: '/videos/task2_adafruit_mqtt.mp4', title: 'Adafruit IO MQTT Cloud Telemetry & Bulb Switch Demonstration' }
     ]
   },
   {
@@ -224,11 +222,10 @@ void loop() {
     reflection:
       'Demonstrated how serverless webhooks bridge physical embedded systems with software ecosystem automation, expanding device capabilities without adding code complexity on the micro-controller.',
     photos: [
-      { url: '', caption: 'Placeholder: IFTTT Applet flow configuration screenshot linking Webhooks to Adafruit IO' },
-      { url: '', caption: 'Placeholder: System response timeline showing webhook triggering physical ESP32 state' }
+      { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
     ],
     videos: [
-      { url: '', title: 'Placeholder: Demonstration video of automated webhook triggering device execution' }
+      { url: '/videos/task3_ifttt_automation.mp4', title: 'IFTTT Event Automation & Webhook Execution Video' }
     ]
   },
   {
