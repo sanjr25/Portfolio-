@@ -11,8 +11,7 @@ import {
   CheckCircle2,
   Zap,
   Activity,
-  X,
-  Play
+  X
 } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
@@ -185,7 +184,7 @@ void loop() {
       { url: '/images/iot/adafruit_io_dashboard_bulb.png', caption: 'Adafruit IO Cloud Dashboard — prajasri / Dashboards / Bulb' }
     ],
     videos: [
-      { url: '/videos/task2_adafruit_mqtt.mp4', title: 'Adafruit IO MQTT Control — Bulb On/Off Video' }
+      { url: '/videos/task3_ifttt_automation.mp4', title: 'Adafruit IO MQTT Cloud Telemetry & Bulb Switch Video' }
     ]
   },
   {
@@ -221,7 +220,7 @@ void loop() {
       'Demonstrated how serverless webhooks bridge physical embedded systems with software ecosystem automation, expanding device capabilities without adding code complexity on the micro-controller.',
     photos: [],
     videos: [
-      { url: '/videos/task3_ifttt_automation.mp4', title: 'IFTTT Webhooks & Voice Assistant Access Bulb Control Video' }
+      { url: '/videos/task2_adafruit_mqtt.mp4', title: 'IFTTT Webhooks & Voice Assistant Access Bulb Control Video' }
     ]
   },
   {
@@ -607,91 +606,67 @@ export const IOTSection: React.FC = () => {
                 {/* TAB 3: MEDIA (PHOTOS & VIDEOS) */}
                 {activeTab === 'media' && (
                   <div className="space-y-8">
-                    {/* Photos Section */}
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <h4 className="flex items-center gap-2 font-syne text-base font-bold text-white">
-                          <ImageIcon className="w-4 h-4 text-emerald-400" />
-                          Project Photos
-                        </h4>
-                        <span className="text-xs font-mono text-slate-400">
-                          (Reserved spaces for hardware & setup captures)
-                        </span>
-                      </div>
+                    {/* Photos Section (rendered only if photos exist) */}
+                    {selectedTask.photos && selectedTask.photos.length > 0 && (
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="flex items-center gap-2 font-syne text-base font-bold text-white">
+                            <ImageIcon className="w-4 h-4 text-emerald-400" />
+                            Project Photos & Dashboard Screenshots
+                          </h4>
+                        </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {selectedTask.photos.map((photo, i) => (
-                          <div
-                            key={i}
-                            onClick={() => photo.url && setLightboxPhoto(photo)}
-                            className={`group relative rounded-xl overflow-hidden border border-white/10 bg-slate-950 p-4 flex flex-col items-center justify-center min-h-[200px] transition-all duration-300 ${
-                              photo.url ? 'cursor-pointer hover:border-emerald-400/60' : ''
-                            }`}
-                          >
-                            {photo.url ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {selectedTask.photos.map((photo, i) => (
+                            <div
+                              key={i}
+                              onClick={() => photo.url && setLightboxPhoto(photo)}
+                              className={`group relative rounded-xl overflow-hidden border border-white/10 bg-slate-950 p-4 flex flex-col items-center justify-center transition-all duration-300 ${
+                                photo.url ? 'cursor-pointer hover:border-emerald-400/60' : ''
+                              }`}
+                            >
                               <img
                                 src={photo.url}
                                 alt={photo.caption}
-                                className="max-h-[220px] w-full object-contain rounded-lg"
+                                className="max-h-[260px] w-full object-contain rounded-lg"
                               />
-                            ) : (
-                              <div className="w-full flex flex-col items-center justify-center p-8 text-center border-2 border-dashed border-white/15 rounded-xl bg-white/[0.02]">
-                                <ImageIcon className="w-8 h-8 text-slate-400 mb-2 group-hover:text-emerald-400 transition-colors" />
-                                <span className="font-mono text-xs text-amber-400 font-semibold mb-1">
-                                  [ Photo Slot {i + 1} Placeholder ]
-                                </span>
-                                <span className="font-mono text-[11px] text-slate-400 max-w-xs">
-                                  {photo.caption}
-                                </span>
-                              </div>
-                            )}
-
-                            {photo.url && (
-                              <p className="mt-2 text-xs font-mono text-slate-300 text-center">{photo.caption}</p>
-                            )}
-                          </div>
-                        ))}
+                              {photo.caption && (
+                                <p className="mt-2 text-xs font-mono text-slate-300 text-center">{photo.caption}</p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
                     {/* Videos Section */}
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <h4 className="flex items-center gap-2 font-syne text-base font-bold text-white">
-                          <Video className="w-4 h-4 text-cyan-400" />
-                          Video Demonstrations
-                        </h4>
-                        <span className="text-xs font-mono text-slate-400">
-                          (Reserved spaces for hardware action clips)
-                        </span>
-                      </div>
+                    {selectedTask.videos && selectedTask.videos.length > 0 && (
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <h4 className="flex items-center gap-2 font-syne text-base font-bold text-white">
+                            <Video className="w-4 h-4 text-cyan-400" />
+                            Video Demonstrations
+                          </h4>
+                        </div>
 
-                      <div className="grid grid-cols-1 gap-4">
-                        {selectedTask.videos.map((vid, i) => (
-                          <div
-                            key={i}
-                            className="rounded-xl border border-white/10 bg-slate-950 p-6 flex flex-col items-center justify-center min-h-[200px]"
-                          >
-                            {vid.url ? (
-                              <video controls className="w-full max-h-[360px] rounded-lg">
+                        <div className="grid grid-cols-1 gap-4">
+                          {selectedTask.videos.map((vid, i) => (
+                            <div
+                              key={i}
+                              className="rounded-xl border border-white/10 bg-slate-950 p-4 flex flex-col items-center justify-center"
+                            >
+                              <video controls className="w-full max-h-[400px] rounded-lg">
                                 <source src={vid.url} type="video/mp4" />
                                 Your browser does not support the video tag.
                               </video>
-                            ) : (
-                              <div className="w-full flex flex-col items-center justify-center p-8 text-center border-2 border-dashed border-white/15 rounded-xl bg-white/[0.02]">
-                                <Play className="w-10 h-10 text-cyan-400 mb-2 animate-pulse" />
-                                <span className="font-mono text-xs text-cyan-400 font-semibold mb-1">
-                                  [ Video Slot {i + 1} Placeholder ]
-                                </span>
-                                <span className="font-mono text-[11px] text-slate-400 max-w-md">
-                                  {vid.title}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                        ))}
+                              {vid.title && (
+                                <p className="mt-2 text-xs font-mono text-cyan-300 text-center">{vid.title}</p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 )}
               </div>
