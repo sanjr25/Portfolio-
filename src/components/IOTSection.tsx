@@ -294,11 +294,10 @@ void loop() {
     reflection:
       'Mastered cloud database integration for embedded systems. Realized the power of WebSocket listener threads over legacy HTTP polling for instantaneous sub-100ms control response.',
     photos: [
-      { url: '', caption: 'Placeholder: Firebase Realtime Database console showing live JSON telemetry node trees' },
-      { url: '', caption: 'Placeholder: Complete ESP32 hardware breadboard circuit with DHT sensor, LDR, and relay' }
+      { url: '/images/iot/firebase_dashboard_screenshot.jpg', caption: 'Firebase Environmental Telemetry & Appliance Control Dashboard' }
     ],
     videos: [
-      { url: '', title: 'Placeholder: Demonstration video of real-time multi-sensor telemetry streaming to Firebase' }
+      { url: '/videos/task4_firebase_rtdb.mp4', title: 'Firebase Realtime Database & Sensor Dashboard Demonstration Video' }
     ]
   },
   {
@@ -346,13 +345,8 @@ void loop() {
     },
     reflection:
       'Completing the end-to-end IoT lifecycle — from microcontroller pin logic to cloud storage and downloadable data analytics — provided a comprehensive understanding of production-grade IoT architecture.',
-    photos: [
-      { url: '', caption: 'Placeholder: Exported CSV dataset open in spreadsheet analytics software' },
-      { url: '', caption: 'Placeholder: Historical time-series graph rendered on web dashboard' }
-    ],
-    videos: [
-      { url: '', title: 'Placeholder: Video showing 1-click CSV export generation from live IoT dashboard telemetry' }
-    ]
+    photos: [],
+    videos: []
   }
 ];
 
