@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, GraduationCap, MapPin, Calendar, Sparkles, Binary, Radio } from 'lucide-react';
+import { Cpu, GraduationCap, MapPin, Calendar, Sparkles, Binary, Radio, ArrowRight } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 
 export const AboutSection: React.FC = () => {
@@ -99,16 +99,27 @@ export const AboutSection: React.FC = () => {
 
             {/* Interest 2 */}
             <BorderGlow glowColor="#f59e0b" edgeSensitivity={200}>
-              <div className="p-6">
-                <h4 className="font-syne font-bold text-lg text-amber-400 flex items-center gap-2 mb-3">
-                  <Radio className="w-5 h-5" /> IoT (Internet of Things)
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {['ESP8266', 'Wireless connectivity', 'Sensor-based systems', 'Basic IoT systems'].map((skill, i) => (
-                    <span key={i} className="px-3 py-1 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono font-medium">
-                      {skill}
-                    </span>
-                  ))}
+              <div className="p-6 flex flex-col justify-between h-full">
+                <div>
+                  <h4 className="font-syne font-bold text-lg text-amber-400 flex items-center gap-2 mb-3">
+                    <Radio className="w-5 h-5" /> IoT (Internet of Things)
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {['ESP32 / ESP8266', 'Firebase RTDB', 'Adafruit IO / MQTT', 'Sensor Telemetry', 'Cloud Automation'].map((skill, i) => (
+                      <span key={i} className="px-3 py-1 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-mono font-medium">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-amber-500/20">
+                  <a
+                    href="#iot"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400 hover:text-amber-300 transition-colors"
+                  >
+                    <span>Explore IoT Section & Tasks</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               </div>
             </BorderGlow>

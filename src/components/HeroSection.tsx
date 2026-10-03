@@ -1,17 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wifi, Mail, Terminal, Sparkles, User } from 'lucide-react';
+import { Wifi, Mail, Terminal, Sparkles, User, Radio } from 'lucide-react';
 import BorderGlow from './BorderGlow';
 import { LinkedInIcon, GitHubIcon } from './SocialIcons';
 
 interface HeroSectionProps {
   onExploreProjects: () => void;
   onExploreAbout: () => void;
+  onExploreIOT?: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onExploreProjects,
   onExploreAbout,
+  onExploreIOT,
 }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
@@ -47,14 +49,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               Electronics & Communication Engineering Student
             </motion.p>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-1.5 text-xs sm:text-sm text-emerald-400 font-mono tracking-widest uppercase font-semibold"
+              className="mt-2 flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm font-mono tracking-wider uppercase font-semibold"
             >
-              Embedded Systems · IoT · Digital Electronics
-            </motion.p>
+              <span className="text-amber-400">Embedded Systems</span>
+              <span className="text-white/30">•</span>
+              <a
+                href="#iot"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onExploreIOT) onExploreIOT();
+                }}
+                className="text-emerald-400 hover:text-emerald-300 underline underline-offset-4 decoration-emerald-500/50 hover:decoration-emerald-400 flex items-center gap-1 transition-colors group cursor-pointer"
+                title="Direct link to IoT & Smart Systems section"
+              >
+                <span>IoT & Smart Home</span>
+                <Sparkles className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-125 transition-transform" />
+              </a>
+              <span className="text-white/30">•</span>
+              <span className="text-cyan-400">Digital Electronics</span>
+            </motion.div>
 
             {/* Unique Custom-Designed High-Tech Tagline */}
             <motion.div
@@ -95,6 +112,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <span>View Hardware Projects</span>
                   <Wifi className="w-4 h-4 text-white" />
                 </button>
+
+                <a
+                  href="#iot"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onExploreIOT) onExploreIOT();
+                  }}
+                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-slate-950 font-syne font-bold text-xs sm:text-sm tracking-wide uppercase flex items-center gap-2 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:scale-105 hover:shadow-emerald-500/50 cursor-pointer"
+                >
+                  <span>IoT & Smart Systems</span>
+                  <Radio className="w-4 h-4 text-slate-950" />
+                </a>
 
                 <button
                   onClick={onExploreAbout}

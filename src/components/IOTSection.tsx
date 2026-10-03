@@ -294,7 +294,10 @@ void loop() {
     reflection:
       'Mastered cloud database integration for embedded systems. Realized the power of WebSocket listener threads over legacy HTTP polling for instantaneous sub-100ms control response.',
     photos: [
-      { url: '/images/iot/firebase_dashboard_screenshot.jpg', caption: 'Firebase Environmental Telemetry & Appliance Control Dashboard' }
+      { url: '/images/iot/smart_env_overview_dashboard.jpg', caption: 'Smart Environment Overview Dashboard — Real-time atmospheric telemetry streaming from ESP32 node' },
+      { url: '/images/iot/smart_env_hardware_simulator.jpg', caption: 'ESP32 Hardware Simulator & Testing Console — Simulated telemetry & threshold verification' },
+      { url: '/images/iot/smart_env_login_portal.jpg', caption: 'Smart Environment Monitor — User Authentication & Dashboard Access Gateway' },
+      { url: '/images/iot/smart_env_recorded_measurements_log.jpg', caption: 'Firebase Environmental Telemetry Historical Log — Live Timestamped Data Records' }
     ],
     videos: [
       { url: '/videos/task4_firebase_rtdb.mp4', title: 'Firebase Realtime Database & Sensor Dashboard Demonstration Video' }

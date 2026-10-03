@@ -23,14 +23,17 @@ export function App() {
     if (id === 'protossem') {
       setActivePage('protosem');
       setActiveSection('protossem');
+      window.history.pushState(null, '', '#protossem');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (id === 'contact') {
       setActivePage('contact');
       setActiveSection('contact');
+      window.history.pushState(null, '', '#contact');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       setActivePage('home');
       setActiveSection(id);
+      window.history.pushState(null, '', '#' + id);
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
@@ -39,6 +42,41 @@ export function App() {
       }, 50);
     }
   };
+
+  // Listen to direct URL hash navigation (e.g., #iot, #work, #about, #protossem, #contact)
+  useEffect(() => {
+    if (isLoading) return;
+
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (!hash) return;
+
+      if (hash === 'protossem' || hash === 'protosem') {
+        setActivePage('protosem');
+        setActiveSection('protossem');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === 'contact') {
+        setActivePage('contact');
+        setActiveSection('contact');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (['home', 'about', 'work', 'iot'].includes(hash)) {
+        setActivePage('home');
+        setActiveSection(hash);
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 150);
+      }
+    };
+
+    // Trigger on initial load after loading screen
+    handleHashNavigation();
+
+    window.addEventListener('hashchange', handleHashNavigation);
+    return () => window.removeEventListener('hashchange', handleHashNavigation);
+  }, [isLoading]);
 
   useEffect(() => {
     if (isLoading || activePage !== 'home') return;
@@ -106,6 +144,7 @@ export function App() {
                 <HeroSection
                   onExploreProjects={() => handleSelectNav('work')}
                   onExploreAbout={() => handleSelectNav('about')}
+                  onExploreIOT={() => handleSelectNav('iot')}
                 />
 
                 <AboutSection />
